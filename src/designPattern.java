@@ -54,21 +54,31 @@ public class designPattern {
 
         // adapter pattern
 
-        MallardDuck mallarDuck = new MallardDuck();
-        WildTurkey turkey = new WildTurkey();
-        // Then we wrap Turkey in a TurkeyAdapter which makes looks like a Duck
-        Duck turkeyAdapter = new TurkeyAdapter(turkey);
+//        MallardDuck mallarDuck = new MallardDuck();
+//        WildTurkey turkey = new WildTurkey();
+//        // Then we wrap Turkey in a TurkeyAdapter which makes looks like a Duck
+//        Duck turkeyAdapter = new TurkeyAdapter(turkey);
+//
+//        System.out.println("The duck sayss ");
+//        testDuck(mallarDuck);
+//        System.out.println("The duck says without method ");
+//        mallarDuck.fly();
+//        mallarDuck.quack();
+//        System.out.println("The turkey sayss without adapter ");
+//        turkey.gobble();
+//        turkey.fly();
+//        System.out.println("Now lets try to pass the turkey as duck ");
+//        testDuck(turkeyAdapter);
 
-        System.out.println("The duck sayss ");
-        testDuck(mallarDuck);
-        System.out.println("The duck says without method ");
-        mallarDuck.fly();
-        mallarDuck.quack();
-        System.out.println("The turkey sayss without adapter ");
-        turkey.gobble();
-        turkey.fly();
-        System.out.println("Now lets try to pass the turkey as duck ");
-        testDuck(turkeyAdapter);
+          MallardDuck mallardDuck = new MallardDuck();
+          WildTurkey turkey = new WildTurkey();
+          BluePeacock peacock = new BluePeacock();
+
+          Duck turkeyAdapter = new TurkeyAdapter(turkey);
+          Duck peacockAdapter = new peacockAdapter(peacock);
+
+          testDuck(turkeyAdapter);
+          testDuck(peacockAdapter);
 
     }
 
