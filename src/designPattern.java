@@ -44,13 +44,37 @@ public class designPattern {
 //        pStore.orderPizza("pepperoni");
 
          // command pattern
-        ElectronicDevice newDevice = new Television();
+//        ElectronicDevice newDevice = new Television();
+//
+//        TurnTvOn onCommand = new TurnTvOn(newDevice);
+//
+//        DeviceButton onPressed = new DeviceButton(onCommand);
+//
+//        onPressed.press();
 
-        TurnTvOn onCommand = new TurnTvOn(newDevice);
+        // adapter pattern
 
-        DeviceButton onPressed = new DeviceButton(onCommand);
+        MallardDuck mallarDuck = new MallardDuck();
+        WildTurkey turkey = new WildTurkey();
+        // Then we wrap Turkey in a TurkeyAdapter which makes looks like a Duck
+        Duck turkeyAdapter = new TurkeyAdapter(turkey);
 
-        onPressed.press();
+        System.out.println("The duck sayss ");
+        testDuck(mallarDuck);
+        System.out.println("The duck says without method ");
+        mallarDuck.fly();
+        mallarDuck.quack();
+        System.out.println("The turkey sayss without adapter ");
+        turkey.gobble();
+        turkey.fly();
+        System.out.println("Now lets try to pass the turkey as duck ");
+        testDuck(turkeyAdapter);
+
+    }
+
+    static void testDuck(Duck duck){
+        duck.quack();
+        duck.fly();
 
     }
 }
