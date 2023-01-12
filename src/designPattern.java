@@ -43,7 +43,7 @@ public class designPattern {
 //        pStore.orderPizza("cheese");
 //        pStore.orderPizza("pepperoni");
 
-         // command pattern
+        // command pattern
 //        ElectronicDevice newDevice = new Television();
 //
 //        TurnTvOn onCommand = new TurnTvOn(newDevice);
@@ -70,21 +70,34 @@ public class designPattern {
 //        System.out.println("Now lets try to pass the turkey as duck ");
 //        testDuck(turkeyAdapter);
 
-          MallardDuck mallardDuck = new MallardDuck();
-          WildTurkey turkey = new WildTurkey();
-          BluePeacock peacock = new BluePeacock();
+//          MallardDuck mallardDuck = new MallardDuck();
+//          WildTurkey turkey = new WildTurkey();
+//          BluePeacock peacock = new BluePeacock();
+//
+//          Duck turkeyAdapter = new TurkeyAdapter(turkey);
+//          Duck peacockAdapter = new peacockAdapter(peacock);
+//
+//          testDuck(turkeyAdapter);
+//          testDuck(peacockAdapter);
+//
+//    }
+//
+//    static void testDuck(Duck duck){
+//        duck.quack();
+//        duck.fly();
+//
+//    }
 
-          Duck turkeyAdapter = new TurkeyAdapter(turkey);
-          Duck peacockAdapter = new peacockAdapter(peacock);
-
-          testDuck(turkeyAdapter);
-          testDuck(peacockAdapter);
-
-    }
-
-    static void testDuck(Duck duck){
-        duck.quack();
-        duck.fly();
-
+        // Facade Design Pattern
+        Amplifier amp = new Amplifier();
+        Tuner tuner = new Tuner();
+        DvdPlayer dvd = new DvdPlayer();
+        CdPlayer cd = new CdPlayer();
+        Projector projector = new Projector();
+        TheaterLights screen = new TheaterLights();
+        Screen lights = new Screen();
+        PopcornPopper popper = new PopcornPopper();
+        HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(amp, tuner, dvd, cd, projector, screen, lights, popper);
+        homeTheaterFacade.watchMovie("Game of Thrones");
     }
 }
