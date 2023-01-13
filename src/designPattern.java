@@ -88,16 +88,27 @@ public class designPattern {
 //
 //    }
 
-        // Facade Design Pattern
-        Amplifier amp = new Amplifier();
-        Tuner tuner = new Tuner();
-        DvdPlayer dvd = new DvdPlayer();
-        CdPlayer cd = new CdPlayer();
-        Projector projector = new Projector();
-        TheaterLights screen = new TheaterLights();
-        Screen lights = new Screen();
-        PopcornPopper popper = new PopcornPopper();
-        HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(amp, tuner, dvd, cd, projector, screen, lights, popper);
-        homeTheaterFacade.watchMovie("Game of Thrones");
+//        // Facade Design Pattern
+//        Amplifier amp = new Amplifier();
+//        Tuner tuner = new Tuner();
+//        DvdPlayer dvd = new DvdPlayer();
+//        CdPlayer cd = new CdPlayer();
+//        Projector projector = new Projector();
+//        TheaterLights screen = new TheaterLights();
+//        Screen lights = new Screen();
+//        PopcornPopper popper = new PopcornPopper();
+//        HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(amp, tuner, dvd, cd, projector, screen, lights, popper);
+//        homeTheaterFacade.watchMovie("Game of Thrones");
+
+
+        // Template Method Design Pattern
+        System.out.println("For customer 1: ");
+        Coffee coffee = new Coffee();
+        coffee.prepareRecipe();
+        System.out.println("-------------------------------------------------");
+        System.out.println("For customer 2: ");
+        Tea tea = new Tea();
+        tea.prepareRecipe();
+
     }
 }
