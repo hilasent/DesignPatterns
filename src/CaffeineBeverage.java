@@ -17,7 +17,10 @@ public abstract class CaffeineBeverage {
      }
 
     }
-    abstract boolean customerWantsCondiments();
+    boolean customerWantsCondiments(){
+        return true;
+
+    }
 
     void pourInCup() {
         System.out.println("Pouring into cup...");
