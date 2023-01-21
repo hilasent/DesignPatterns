@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class designPattern {
     public static void main(String[] args) {
 //        // Observer Pattern
@@ -100,15 +102,57 @@ public class designPattern {
 //        HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(amp, tuner, dvd, cd, projector, screen, lights, popper);
 //        homeTheaterFacade.watchMovie("Game of Thrones");
 
+//
+//        // Template Method Design Pattern
+//        System.out.println("For customer 1: ");
+//        Coffee coffee = new Coffee();
+//        coffee.prepareRecipe();
+//        System.out.println("-------------------------------------------------");
+//        System.out.println("For customer 2: ");
+//        Tea tea = new Tea();
+//        tea.prepareRecipe();
 
-        // Template Method Design Pattern
-        System.out.println("For customer 1: ");
-        Coffee coffee = new Coffee();
-        coffee.prepareRecipe();
-        System.out.println("-------------------------------------------------");
-        System.out.println("For customer 2: ");
-        Tea tea = new Tea();
-        tea.prepareRecipe();
+
+        //Without  Iterator Design Pattern
+//        PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+//        ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
+//
+//        DinerMenu dinerMenu = new DinerMenu();
+//        MenuItem lunchItems[] = dinerMenu.getMenuItems();
+//
+//        for(int i=0; i< breakfastItems.size(); i++){
+//            MenuItem menuItem = (MenuItem) breakfastItems.get(i);
+//            System.out.println(menuItem.getName() + " ");
+//            System.out.println(menuItem.getDesc() + " ");
+//            System.out.println(menuItem.getVegetarian() + " ");
+//            System.out.println(menuItem.getPrice() + " ");
+//        }
+//
+//        for(int i=0; i<lunchItems.length; i++){
+//          MenuItem menuItem = lunchItems[i];
+//            System.out.println(menuItem.getName() + " ");
+//            System.out.println(menuItem.getDesc() + " ");
+//            System.out.println(menuItem.getVegetarian() + " ");
+//            System.out.println(menuItem.getPrice() + " ");
+//        }
+
+
+        // with Iterator Pattern
+
+        PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+        DinerMenu dinerMenu = new DinerMenu();
+        Waitress waitress = new Waitress(pancakeHouseMenu,dinerMenu);
+        waitress.printMenu();
+
+
+
+
+
+
+
+
+
+
 
     }
 }

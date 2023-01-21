@@ -8,8 +8,9 @@ public class PancakeHouseMenu extends MenuItem {
         menuItems.add(menuItem);
     }
 
-    public ArrayList getMenuItems() {
-        return menuItems;
+
+    public Iterator createIterator(){
+        return new pancakeHouseIterator(menuItems);
     }
 
     public PancakeHouseMenu(){
